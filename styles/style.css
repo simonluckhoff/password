@@ -1,0 +1,82 @@
+body{
+    background-image: linear-gradient(to right, #8AEDF6 , #60A2F5);
+}
+
+.enterpassword{
+    padding-top: 10vh;
+}
+
+label{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enterpassword p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.enterpassword input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: grid;
+    grid-auto-flow: row;
+}
+
+form .mainbutton{
+    display: flex;
+}
+
+.mainbutton{
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+    box-shadow: rgba(72, 135, 202, 0.8) 0 0 5px 5px;
+}
+
+h1, label, p{
+    color: #252525;
+}
+
+.entered img{
+    width: 3vh;
+    color: black;
+}
+
+.entered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.entered a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img:hover {
+    transform: scale(1.03);
+    transition: ease-out.2s;
+}
