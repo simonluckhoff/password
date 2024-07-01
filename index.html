@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>password</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-    <div class="enterpassword">
-        <form>
-            <label class="enterpasswordd" for="pswd" style="font-style: oblique; font-weight: 600;">Enter your password:</label>
-            <input class="mainbutton" type="password" id="pswd">
-            <input class="mainbutton" type="button" value="Submit" onclick="checkPswd();" />
-        </form>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>password</title>
+		<link rel="stylesheet" href="styles/style.css" />
+	</head>
+	<body>
+		<div class="enterpassword">
+			<form>
+				<label class="enterpasswordd" for="pswdInput" style="font-style: oblique; font-weight: 600">Enter your password:</label>
+				<input id="pswdInput" class="mainbutton" type="password" />
+				<input id="submitBtn" class="mainbutton" type="button" value="Submit" onclick="submitForm()" />
+			</form>
 
-        <p style="font-style: italic; font-size: 0.8rem;">(psswrd: yourmom)</p>
-        <p>(click submit, not enter!)</p>
-    </div>
+			<p style="font-style: italic; font-size: 0.8rem">(psswrd: yourmom)</p>
+		</div>
 
+		<script type="text/javascript">
+			// this function listens to every keypress from the pswdInput field, if the keypress is
+			// the 'enter' button then we just act as if they pressed the submit button
+			document.getElementById("pswdInput").addEventListener("keypress", (event) => {
+				if (event.key === "Enter") {
+					event.preventDefault();
+					document.getElementById("submitBtn").click();
+				}
+			});
 
+			// this function gets executed when the user clicks the submit button
+			function submitForm() {
+				var confirmPassword = "yourmom";
+				var password = document.getElementById("pswdInput").value;
 
-
-
-
-
-
-    <!--Function to check password the already set password is admin-->
-    <script type="text/javascript">
-        function checkPswd() {
-            var confirmPassword = "yourmom";
-            var password = document.getElementById("pswd").value;
-            if (password == confirmPassword) {
-                 window.location="./public/welcome.html";
-            }
-            else{
-                alert("Passwords do not match.");
-            }
-        }
-    </script>
-</body>
+				if (password === confirmPassword) {
+					window.location = "./public/welcome.html";
+				} else {
+					alert("Passwords do not match.");
+				}
+			}
+		</script>
+	</body>
 </html>
